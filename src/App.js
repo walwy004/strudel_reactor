@@ -9,6 +9,7 @@ import { getAudioContext, webaudioOutput, registerSynthSounds } from '@strudel/w
 import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
 import console_monkey_patch, { getD3Data } from './console-monkey-patch';
+import RadioButton from './components/RadioButton';
 
 let globalEditor = null;
 
@@ -146,6 +147,10 @@ return (
                                 p1: HUSH
                             </label>
                         </div>
+
+                        <RadioButton backgroundColor='red' />
+                        <RadioButton backgroundColor='yellow' />
+                        <RadioButton backgroundColor='orange' />
                     </div>
                 </div>
             </div>
