@@ -19,19 +19,19 @@ const handleD3Data = (event) => {
 
 export function SetupButtons() {
 
-    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-    document.getElementById('process').addEventListener('click', () => {
-        Proc()
-    }
-    )
-    document.getElementById('process_play').addEventListener('click', () => {
-        if (globalEditor != null) {
-            Proc()
-            globalEditor.evaluate()
-        }
-    }
-    )
+    //document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
+    //document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
+    //document.getElementById('process').addEventListener('click', () => {
+    //    Proc()
+    //}
+    //)
+    //document.getElementById('process_play').addEventListener('click', () => {
+    //    if (globalEditor != null) {
+    //        Proc()
+    //        globalEditor.evaluate()
+    //    }
+    //}
+    //)
 }
 
 
@@ -114,43 +114,47 @@ return (
 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                        <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
-                        <textarea className="form-control" rows="15" id="proc" ></textarea>
-                    </div>
-                    <div className="col-md-4">
 
-                        <nav>
-                            <button id="process" className="btn btn-outline-primary">Preprocess</button>
-                            <button id="process_play" className="btn btn-outline-primary">Proc & Play</button>
-                            <br />
-                            <button id="play" className="btn btn-outline-primary">Play</button>
-                            <button id="stop" className="btn btn-outline-primary">Stop</button>
-                        </nav>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                        <div id="editor" />
-                        <div id="output" />
-                    </div>
-                    <div className="col-md-4">
-                        <div className="form-check">
-                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={ProcAndPlay} defaultChecked />
-                            <label className="form-check-label" htmlFor="flexRadioDefault1">
-                                p1: ON
-                            </label>
-                        </div>
-                        <div className="form-check">
-                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={ProcAndPlay} />
-                            <label className="form-check-label" htmlFor="flexRadioDefault2">
-                                p1: HUSH
-                            </label>
+                    <div className="col-md-6" >
+                        <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
+                            <textarea className="form-control" rows="15" id="proc" ></textarea>
                         </div>
 
-                        <RadioButton backgroundColor='red' />
-                        <RadioButton backgroundColor='yellow' />
-                        <RadioButton backgroundColor='orange' />
+                        <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                            <div id="editor" />
+                            <div id="output" />
+                        </div>
+                    </div>
+                    
+                    <div className="col-6 d-flex jusitify-content-center align-items-center">
+
+                        <div className="container">
+
+                            {/*Radio buttons*/}
+                            <div className="row">
+                                <RadioButton backgroundColor='red' />
+                                <RadioButton backgroundColor='yellow' />
+                                <RadioButton backgroundColor='orange' />
+                            </div>
+
+                            {/*TO BE DELETED*/}
+                            <div className="row">
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={ProcAndPlay} defaultChecked />
+                                    <label className="form-check-label" htmlFor="flexRadioDefault1">
+                                        p1: ON
+                                    </label>
+                                </div>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={ProcAndPlay} />
+                                    <label className="form-check-label" htmlFor="flexRadioDefault2">
+                                        p1: HUSH
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
