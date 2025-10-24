@@ -133,9 +133,22 @@ return (
 
                             {/*Radio buttons*/}
                             <div className="row">
-                                <RadioButton backgroundColor='red' />
-                                <RadioButton backgroundColor='yellow' />
-                                <RadioButton backgroundColor='orange' />
+                                <RadioButton backgroundColor='#ff5757' />
+                                <RadioButton backgroundColor='#ffbd59' />
+                                <RadioButton backgroundColor='#ffde59' />
+                                <input className="form-check-input" type="checkbox" />
+                            </div>
+                            <div className="row">
+                                <RadioButton backgroundColor="#ff66c4" />
+                                <RadioButton backgroundColor='#7ed957' />
+                                <RadioButton backgroundColor='#e2a9f1' />
+                                <input className="form-check-input" type="checkbox" />
+                            </div>
+                            <div className="row">
+                                <RadioButton backgroundColor='#5ce1e6' />
+                                <RadioButton backgroundColor='#8c52ff' />
+                                <RadioButton backgroundColor='#c1ff72' />
+                                <input className="form-check-input" type="checkbox" />
                             </div>
 
                             {/*TO BE DELETED*/}
