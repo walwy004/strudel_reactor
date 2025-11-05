@@ -129,40 +129,41 @@ return (
                     </div>
                     
                     <div className="col-6 d-flex jusitify-content-center align-items-center">
-
                         <div className="container">
 
-                            {/*Proc buttons*/}
-                            <div className="col-3">
-                                <ProcButton btnId="save" name="save" />
-                                <ProcButton btnId="load" name="load" />
-                                <ProcButton btnId="play" name="play" />
-                                <ProcButton btnId="stop" name="stop" />
-                            </div>
+                            {/* Grid for pads and toggles */}
+                            <div className="row mb-3">
 
-                            <div className="col-11">
+                                {/*Proc buttons*/}
+                                <div className="col-3">
+                                    <ProcButton btnId="save" name="save" backgroundColor="grey" />
+                                    <ProcButton btnId="load" name="load" backgroundColor="grey" />
+                                    <ProcButton btnId="play" name="play" backgroundColor="#7ed957" />
+                                    <ProcButton btnId="stop" name="stop" backgroundColor="red" />
+                                </div>
+
                                 {/*Radio buttons*/}
-                                <div className="row">
-                                    <RadioButton backgroundColor='#ff5757' />
-                                    <RadioButton backgroundColor='#ffbd59' />
-                                    <RadioButton backgroundColor='#ffde59' />
-                                    <input className="form-check-input" type="checkbox" />
-                                </div>
-                                <div className="row">
-                                    <RadioButton backgroundColor="#ff66c4" />
-                                    <RadioButton backgroundColor='#7ed957' />
-                                    <RadioButton backgroundColor='#e2a9f1' />
-                                    <input className="form-check-input" type="checkbox" />
-                                </div>
-                                <div className="row">
-                                    <RadioButton backgroundColor='#5ce1e6' />
-                                    <RadioButton backgroundColor='#8c52ff' />
-                                    <RadioButton backgroundColor='#c1ff72' />
-                                    <input className="form-check-input" type="checkbox" />
+                                <div className="col-9">
+                                    <div className="row">
+                                        <RadioButton backgroundColor='#ff5757' />
+                                        <RadioButton backgroundColor='#ffbd59' />
+                                        <RadioButton backgroundColor='#ffde59' />
+                                        <input className="form-check-input" type="checkbox" />
+                                    </div>
+                                    <div className="row">
+                                        <RadioButton backgroundColor="#ff66c4" />
+                                        <RadioButton backgroundColor='#7ed957' />
+                                        <RadioButton backgroundColor='#e2a9f1' />
+                                        <input className="form-check-input" type="checkbox" />
+                                    </div>
+                                    <div className="row">
+                                        <RadioButton backgroundColor='#5ce1e6' />
+                                        <RadioButton backgroundColor='#8c52ff' />
+                                        <RadioButton backgroundColor='#c1ff72' />
+                                        <input className="form-check-input" type="checkbox" />
+                                    </div>
                                 </div>
                             </div>
-
-                            
 
                             {/*TO BE DELETED*/}
                             <div className="row">
