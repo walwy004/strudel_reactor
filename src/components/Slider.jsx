@@ -4,7 +4,7 @@ function Slider({ sliderId, name }) {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center',
-			marginTop: '130px'
+			marginTop: '100px'
 		}}>
 			<input type="range" className="form-range" id={sliderId}
 				style={{

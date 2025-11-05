@@ -12,7 +12,8 @@ import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 import RadioButton from './components/RadioButton';
 import ProcButton from './components/ProcButton';
 import ToggleSwitch from './components/ToggleSwitch';
-import Slider from './components/Slider'
+import Slider from './components/Slider';
+import CPM from './components/CPM';
 
 let globalEditor = null;
 
@@ -139,6 +140,11 @@ return (
                                 {/*Left Controls*/}
                                 <div className="col-md-4">
 
+                                    {/*CPM*/}
+                                    <div className="row d-flex justify-content-center">
+                                        <CPM />
+                                    </div>
+
                                     {/*Sliders*/}
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-4">
@@ -150,8 +156,8 @@ return (
                                         <div className="col-8"></div>
                                     </div>
                                     
+                                    {/*Proc buttons*/}
                                     <div className="row">
-                                        {/*Proc buttons*/}
                                         <div className="d-flex flex-wrap justify-content-center gap-2">
                                             <ProcButton btnId="save" name="save" backgroundColor="grey" />
                                             <ProcButton btnId="load" name="load" backgroundColor="grey" />
@@ -196,22 +202,6 @@ return (
 
                                 </div>
 
-                            </div>
-
-                            {/*TO BE DELETED*/}
-                            <div className="row">
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" onChange={ProcAndPlay} defaultChecked />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault1">
-                                        p1: ON
-                                    </label>
-                                </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" onChange={ProcAndPlay} />
-                                    <label className="form-check-label" htmlFor="flexRadioDefault2">
-                                        p1: HUSH
-                                    </label>
-                                </div>
                             </div>
 
                         </div>
