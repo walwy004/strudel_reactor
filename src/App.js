@@ -10,6 +10,7 @@ import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
 import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 import RadioButton from './components/RadioButton';
+import ProcButton from './components/ProcButton';
 
 let globalEditor = null;
 
@@ -131,25 +132,37 @@ return (
 
                         <div className="container">
 
-                            {/*Radio buttons*/}
-                            <div className="row">
-                                <RadioButton backgroundColor='#ff5757' />
-                                <RadioButton backgroundColor='#ffbd59' />
-                                <RadioButton backgroundColor='#ffde59' />
-                                <input className="form-check-input" type="checkbox" />
+                            {/*Proc buttons*/}
+                            <div className="col-3">
+                                <ProcButton btnId="save" name="save" />
+                                <ProcButton btnId="load" name="load" />
+                                <ProcButton btnId="play" name="play" />
+                                <ProcButton btnId="stop" name="stop" />
                             </div>
-                            <div className="row">
-                                <RadioButton backgroundColor="#ff66c4" />
-                                <RadioButton backgroundColor='#7ed957' />
-                                <RadioButton backgroundColor='#e2a9f1' />
-                                <input className="form-check-input" type="checkbox" />
+
+                            <div className="col-11">
+                                {/*Radio buttons*/}
+                                <div className="row">
+                                    <RadioButton backgroundColor='#ff5757' />
+                                    <RadioButton backgroundColor='#ffbd59' />
+                                    <RadioButton backgroundColor='#ffde59' />
+                                    <input className="form-check-input" type="checkbox" />
+                                </div>
+                                <div className="row">
+                                    <RadioButton backgroundColor="#ff66c4" />
+                                    <RadioButton backgroundColor='#7ed957' />
+                                    <RadioButton backgroundColor='#e2a9f1' />
+                                    <input className="form-check-input" type="checkbox" />
+                                </div>
+                                <div className="row">
+                                    <RadioButton backgroundColor='#5ce1e6' />
+                                    <RadioButton backgroundColor='#8c52ff' />
+                                    <RadioButton backgroundColor='#c1ff72' />
+                                    <input className="form-check-input" type="checkbox" />
+                                </div>
                             </div>
-                            <div className="row">
-                                <RadioButton backgroundColor='#5ce1e6' />
-                                <RadioButton backgroundColor='#8c52ff' />
-                                <RadioButton backgroundColor='#c1ff72' />
-                                <input className="form-check-input" type="checkbox" />
-                            </div>
+
+                            
 
                             {/*TO BE DELETED*/}
                             <div className="row">
