@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.toggle-btn {
+    background-color: grey;
+    border: 1px solid;
+    border-radius: 100px;
+    width: 50px;
+    height: 28px;
+    transition: background-color 0.1s ease, border-color 0.2s ease;
+    position: relative;
+}
+
+.toggle-btn .thumb {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 100px;
+    transform: translateX(0);
+    transition: left 0.15s ease;
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-btn.toggled {
+    background-color: limegreen
+}
+
+.toggle-btn.toggled .thumb {
+    left: calc(50px - 25px);
+}
