@@ -1,4 +1,4 @@
-function CPM() {
+function CPM({ onCPMChange }) {
 	return (
 		<div className="input-group"
 			style={{
@@ -10,7 +10,7 @@ function CPM() {
 					border: "1px solid black"
 				}}
 			>CPM</span>
-			<input type="text" className="form-control" placeholder="120"
+			<input onChange={onCPMChange} type="text" className="form-control" placeholder="140"
 				style={{
 					backgroundColor: 'white',
 					border: "1px solid black"

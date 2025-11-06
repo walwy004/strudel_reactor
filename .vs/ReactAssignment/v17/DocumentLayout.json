@@ -11,8 +11,16 @@
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\procbutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\radiobutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\radiobutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\preprocessingtextarea.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preprocessingtextarea.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,9 +40,48 @@
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAkwIsAAAAyAAAA",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAwF0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-23T23:43:19.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PreprocessingTextarea.jsx",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\PreprocessingTextarea.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PreprocessingTextarea.jsx",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\PreprocessingTextarea.jsx",
+              "RelativeToolTip": "src\\components\\PreprocessingTextarea.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T05:24:49.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tunes.js",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeDocumentMoniker": "src\\tunes.js",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeToolTip": "src\\tunes.js",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-06T03:06:01.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Slider.jsx",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Slider.jsx",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeToolTip": "src\\components\\Slider.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T04:00:27.299Z",
               "EditorCaption": ""
             },
             {
@@ -45,21 +92,26 @@
               "RelativeDocumentMoniker": "src\\components\\ProcButton.jsx",
               "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\ProcButton.jsx",
               "RelativeToolTip": "src\\components\\ProcButton.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-10-23T23:04:16.772Z"
+              "WhenOpened": "2025-11-06T03:47:17.504Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RadioButton.jsx",
-              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\RadioButton.jsx",
-              "RelativeDocumentMoniker": "src\\components\\RadioButton.jsx",
-              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\RadioButton.jsx",
-              "RelativeToolTip": "src\\components\\RadioButton.jsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-10-21T23:57:24.728Z"
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

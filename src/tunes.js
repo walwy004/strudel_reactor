@@ -1,4 +1,4 @@
-export const stranger_tune = (volume=1) => `setcps(140/60/4)
+export const stranger_tune = (volume=1, cpm=140) => `setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
 samples('https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json')

@@ -22,54 +22,15 @@ const handleD3Data = (event) => {
     console.log(event.detail);
 };
 
-//export function SetupButtons() {
-
-//    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-//    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-//    document.getElementById('process').addEventListener('click', () => {
-//        Proc()
-//    }
-//    )
-//    document.getElementById('process_play').addEventListener('click', () => {
-//        if (globalEditor != null) {
-//            Proc()
-//            globalEditor.evaluate()
-//        }
-//    }
-//    )
-//}
-
-
-
-//export function ProcAndPlay() {
-//    if (globalEditor != null && globalEditor.repl.state.started == true) {
-//        console.log(globalEditor)
-//        Proc()
-//        globalEditor.evaluate();
-//    }
-//}
-
-//export function Proc() {
-
-//    let proc_text = document.getElementById('proc').value
-//    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-//    ProcessText(proc_text);
-//    globalEditor.setCode(proc_text_replaced)
-//}
-
-//export function ProcessText(match, ...args) {
-
-//    let replace = ""
-//    if (document.getElementById('flexRadioDefault2').checked) {
-//        replace = "_"
-//    }
-
-//    return replace
-//}
 
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
+
+    const [songText, setSongText] = useState(stranger_tune(1));
+    const [volume, setVolume] = useState(1);
+    const [cpm, setCpm] = useState(140);
+    const [state, setState] = useState("stop");
 
     const handlePlay = () => {
         //let outputText = PreprocessText({ inputText: songText, volume: volume });
@@ -81,20 +42,16 @@ export default function StrudelDemo() {
         globalEditor.stop();
     }
 
-    const [songText, setSongText] = useState(stranger_tune(1));
-    const [volume, setVolume] = useState(1);
-    const [state, setState] = useState("stop");
-
     useEffect(() => {
         if (globalEditor) {
-            const updatedTune = stranger_tune(volume);
+            const updatedTune = stranger_tune(volume, cpm);
             globalEditor.setCode(updatedTune);
 
             if (state === "play") {
                 handlePlay();
             }
         }
-    }, [volume])
+    }, [volume, cpm])
 
     useEffect(() => {
 
@@ -168,7 +125,7 @@ return (
 
                                     {/*CPM*/}
                                     <div className="row d-flex justify-content-center">
-                                        <CPM />
+                                        <CPM onCPMChange={(e) => setCpm(e.target.value)} />
                                     </div>
 
                                     {/*Sliders*/}
