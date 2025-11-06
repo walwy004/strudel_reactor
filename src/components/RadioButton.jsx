@@ -1,6 +1,7 @@
-function RadioButton({ backgroundColor }) {
+function RadioButton({ btnId, onClick, backgroundColor }) {
     return (
-        <button style={{
+        <button id={btnId} onClick={onClick}
+            style={{
             width: '120px',
             height: '120px',
             backgroundColor: backgroundColor,

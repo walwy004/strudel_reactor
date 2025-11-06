@@ -30,6 +30,7 @@ export default function StrudelDemo() {
     const [songText, setSongText] = useState(stranger_tune(1));
     const [volume, setVolume] = useState(1);
     const [cpm, setCpm] = useState(140);
+    let [radioBtn, setRadioBtn] = useState('_')
     const [state, setState] = useState("stop");
 
     const handlePlay = () => {
@@ -42,16 +43,24 @@ export default function StrudelDemo() {
         globalEditor.stop();
     }
 
+    const handleRadioBtn = () => {
+        if (radioBtn === '_') {
+            setRadioBtn('')
+        } else {
+            setRadioBtn('_')
+        }
+    }
+
     useEffect(() => {
         if (globalEditor) {
-            const updatedTune = stranger_tune(volume, cpm);
+            const updatedTune = stranger_tune(volume, cpm, radioBtn);
             globalEditor.setCode(updatedTune);
 
             if (state === "play") {
                 handlePlay();
             }
         }
-    }, [volume, cpm])
+    }, [volume, cpm, radioBtn])
 
     useEffect(() => {
 
@@ -159,9 +168,9 @@ return (
                                     <div className="row">
                                         <div className="col-10">
                                             <div className="row">
-                                                <RadioButton backgroundColor='#ff5757' />
-                                                <RadioButton backgroundColor='#ffbd59' />
-                                                <RadioButton backgroundColor='#ffde59' />
+                                                <RadioButton btnId="1" onClick={() => handleRadioBtn()} backgroundColor='#ff5757' />
+                                                <RadioButton btnId="2" onClick={() => handleRadioBtn()} backgroundColor='#ffbd59' />
+                                                <RadioButton btnId="3" onClick={() => handleRadioBtn()} backgroundColor='#ffde59' />
                                             </div>
                                             <div className="row">
                                                 <RadioButton backgroundColor="#ff66c4" />

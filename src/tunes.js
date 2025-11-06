@@ -1,4 +1,4 @@
-export const stranger_tune = (volume=1, cpm=140) => `setcps(${cpm}/60/4)
+export const stranger_tune = (volume=1, cpm=140, radioBtn="_") => `setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
 samples('https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json')
@@ -50,7 +50,7 @@ note(pick(basslines, bass))
 .gain(1 * ${volume})
 
 
-main_arp: 
+${radioBtn}main_arp: 
 note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .sound("supersaw")
 .lpf(300)
