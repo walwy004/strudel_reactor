@@ -1,8 +1,7 @@
-function ProcButton({ btnId, name, backgroundColor }) {
+function ProcButton({ btnId, name, backgroundColor, onClick }) {
     return (
         <button
-            id={btnId}
-            className="btn"
+            onClick={onClick} id={btnId} className="btn"
             style={{
                 width: '60px',
                 height: '40px',

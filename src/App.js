@@ -21,54 +21,62 @@ const handleD3Data = (event) => {
     console.log(event.detail);
 };
 
-export function SetupButtons() {
+//export function SetupButtons() {
 
-    //document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-    //document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-    //document.getElementById('process').addEventListener('click', () => {
-    //    Proc()
-    //}
-    //)
-    //document.getElementById('process_play').addEventListener('click', () => {
-    //    if (globalEditor != null) {
-    //        Proc()
-    //        globalEditor.evaluate()
-    //    }
-    //}
-    //)
-}
+//    document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
+//    document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
+//    document.getElementById('process').addEventListener('click', () => {
+//        Proc()
+//    }
+//    )
+//    document.getElementById('process_play').addEventListener('click', () => {
+//        if (globalEditor != null) {
+//            Proc()
+//            globalEditor.evaluate()
+//        }
+//    }
+//    )
+//}
 
 
 
-export function ProcAndPlay() {
-    if (globalEditor != null && globalEditor.repl.state.started == true) {
-        console.log(globalEditor)
-        Proc()
-        globalEditor.evaluate();
-    }
-}
+//export function ProcAndPlay() {
+//    if (globalEditor != null && globalEditor.repl.state.started == true) {
+//        console.log(globalEditor)
+//        Proc()
+//        globalEditor.evaluate();
+//    }
+//}
 
-export function Proc() {
+//export function Proc() {
 
-    let proc_text = document.getElementById('proc').value
-    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-    ProcessText(proc_text);
-    globalEditor.setCode(proc_text_replaced)
-}
+//    let proc_text = document.getElementById('proc').value
+//    let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
+//    ProcessText(proc_text);
+//    globalEditor.setCode(proc_text_replaced)
+//}
 
-export function ProcessText(match, ...args) {
+//export function ProcessText(match, ...args) {
 
-    let replace = ""
-    if (document.getElementById('flexRadioDefault2').checked) {
-        replace = "_"
-    }
+//    let replace = ""
+//    if (document.getElementById('flexRadioDefault2').checked) {
+//        replace = "_"
+//    }
 
-    return replace
-}
+//    return replace
+//}
 
 export default function StrudelDemo() {
 
-const hasRun = useRef(false);
+    const hasRun = useRef(false);
+
+    const handlePlay = () => {
+        globalEditor.evaluate();
+    }
+
+    const handleStop = () => {
+        globalEditor.stop();
+    }
 
 useEffect(() => {
 
@@ -104,8 +112,8 @@ useEffect(() => {
             });
             
         document.getElementById('proc').value = stranger_tune
-        SetupButtons()
-        Proc()
+        //SetupButtons()
+        //Proc()
     }
 
 }, []);
@@ -161,8 +169,8 @@ return (
                                         <div className="d-flex flex-wrap justify-content-center gap-2">
                                             <ProcButton btnId="save" name="save" backgroundColor="grey" />
                                             <ProcButton btnId="load" name="load" backgroundColor="grey" />
-                                            <ProcButton btnId="play" name="play" backgroundColor="#7ed957" />
-                                            <ProcButton btnId="stop" name="stop" backgroundColor="red" />
+                                            <ProcButton onClick={handlePlay} btnId="play" name="play" backgroundColor="#7ed957" />
+                                            <ProcButton onClick={handleStop} btnId="stop" name="stop" backgroundColor="red" />
                                         </div>
                                     </div>
                                     

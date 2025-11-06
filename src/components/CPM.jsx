@@ -10,7 +10,7 @@ function CPM() {
 					border: "1px solid black"
 				}}
 			>CPM</span>
-			<input type="text" class="form-control" placeholder="120"
+			<input type="text" className="form-control" placeholder="120"
 				style={{
 					backgroundColor: 'white',
 					border: "1px solid black"
