@@ -51,30 +51,17 @@ export default function StrudelDemo() {
     const handleRadioInstruments = (instrument) => {
         setRadioInstruments((prev) => {
             const newBtns = { ...prev };
-
-            if (prev[instrument] === '_') {
-                newBtns[instrument] = '';
-            } else {
-                newBtns[instrument] = '_';
-            }
+            prev[instrument] === '_' ? newBtns[instrument] = '' : newBtns[instrument] = '_';
             return newBtns;
         });
     };
 
     const handleRadioPattern = () => {
-        if (radioPattern === 0) {
-            setRadioPattern(1)
-        } else {
-            setRadioPattern(0)
-        }
+        radioPattern === 0 ? setRadioPattern(1) : setRadioPattern(0)
     }
 
     const handleRadioBass = () => {
-        if (radioBass === 0) {
-            setRadioBass(1)
-        } else {
-            setRadioBass(0)
-        }
+        radioBass === 0 ? setRadioBass(1) : setRadioBass(0)
     }
 
     useEffect(() => {
