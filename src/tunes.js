@@ -1,4 +1,4 @@
-export const stranger_tune = (volume=1, cpm =140, radioButtons={}, radioPattern=0, radioBass=0) =>
+export const stranger_tune = (volume=1, cpm =140, radioButtons={}, radioArp='1', radioPattern=0, radioBass=0) =>
 `setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
@@ -52,7 +52,7 @@ note(pick(basslines, bass))
 
 
 ${radioButtons.main_arp}main_arp: 
-note(pick(arpeggiator1, "<0 1 2 3>/2"))
+note(pick(arpeggiator${radioArp}, "<0 1 2 3>/2"))
 .sound("supersaw")
 .lpf(300)
 .adsr("0:0:.5:.1")
