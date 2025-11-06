@@ -31,13 +31,14 @@ export default function StrudelDemo() {
     const [songText, setSongText] = useState(stranger_tune(1));
     const [volume, setVolume] = useState(1);
     const [cpm, setCpm] = useState(140);
-    const [radioButtons, setRadioButtons] = useState({
+    const [radioInstruments, setRadioInstruments] = useState({
         bassline: '_',
         main_arp: '_',
         drums1: '_',
         drums2: '_',
     });
-    
+    const [radioPattern, setRadioPattern] = useState(0);
+    const [radioBass, setRadioBass] = useState(0);
 
     const handlePlay = () => {
         globalEditor.evaluate();
@@ -47,8 +48,8 @@ export default function StrudelDemo() {
         globalEditor.stop();
     }
 
-    const handleRadioBtns = (instrument) => {
-        setRadioButtons((prev) => {
+    const handleRadioInstruments = (instrument) => {
+        setRadioInstruments((prev) => {
             const newBtns = { ...prev };
 
             if (prev[instrument] === '_') {
@@ -60,16 +61,32 @@ export default function StrudelDemo() {
         });
     };
 
+    const handleRadioPattern = () => {
+        if (radioPattern === 0) {
+            setRadioPattern(1)
+        } else {
+            setRadioPattern(0)
+        }
+    }
+
+    const handleRadioBass = () => {
+        if (radioBass === 0) {
+            setRadioBass(1)
+        } else {
+            setRadioBass(0)
+        }
+    }
+
     useEffect(() => {
         if (globalEditor) {
-            const updatedTune = stranger_tune(volume, cpm, radioButtons);
+            const updatedTune = stranger_tune(volume, cpm, radioInstruments, radioPattern, radioBass);
             globalEditor.setCode(updatedTune);
 
             if (state === "play") {
                 handlePlay();
             }
         }
-    }, [volume, cpm, radioButtons])
+    }, [volume, cpm, radioInstruments, radioPattern, radioBass])
 
     useEffect(() => {
 
@@ -173,19 +190,19 @@ return (
                                     <div className="row">
                                         <div className="col-10">
                                             <div className="row">
-                                                <RadioButton btnId='bassline' onClick={() => handleRadioBtns('bassline')} backgroundColor='#ff5757' />
-                                                <RadioButton btnId='main_arp' onClick={() => handleRadioBtns('main_arp')} backgroundColor='#ffbd59' />
-                                                <RadioButton btnId='drums1' onClick={() => handleRadioBtns('drums1')} backgroundColor='#ffde59' />
+                                                <RadioButton btnId='bassline' onClick={() => handleRadioInstruments('bassline')} backgroundColor='#ff5757' />
+                                                <RadioButton btnId='main_arp' onClick={() => handleRadioInstruments('main_arp')} backgroundColor='#ffbd59' />
+                                                <RadioButton btnId='drums1' onClick={() => handleRadioInstruments('drums1')} backgroundColor='#ffde59' />
                                             </div>
                                             <div className="row">
-                                                <RadioButton btnId='drums2' onClick={() => handleRadioBtns('drums2')} backgroundColor="#ff66c4" />
+                                                <RadioButton btnId='drums2' onClick={() => handleRadioInstruments('drums2')} backgroundColor="#ff66c4" />
                                                 <RadioButton backgroundColor='#7ed957' />
                                                 <RadioButton backgroundColor='#e2a9f1' />
                                             </div>
                                             <div className="row">
                                                 <RadioButton backgroundColor='#5ce1e6' />
-                                                <RadioButton backgroundColor='#8c52ff' />
-                                                <RadioButton backgroundColor='#c1ff72' />
+                                                <RadioButton btnId='pattern' onClick={() => handleRadioPattern(0)} backgroundColor='#8c52ff' />
+                                                <RadioButton btnId='bass' onClick={() => handleRadioBass(0)} backgroundColor='#c1ff72' />
                                             </div>
                                         </div>
 

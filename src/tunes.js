@@ -1,4 +1,4 @@
-export const stranger_tune = (volume = 1, cpm = 140, radioButtons = {}) =>
+export const stranger_tune = (volume=1, cpm =140, radioButtons={}, radioPattern=0, radioBass=0) =>
 `setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
@@ -37,8 +37,8 @@ const arpeggiator2 = [
 ]
 
 
-const pattern = 0
-const bass = 0
+const pattern = ${radioPattern}
+const bass = ${radioBass}
 
 ${radioButtons.bassline}bassline:
 note(pick(basslines, bass))
