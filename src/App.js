@@ -27,15 +27,19 @@ export default function StrudelDemo() {
 
     const hasRun = useRef(false);
 
+    const [state, setState] = useState("stop");
     const [songText, setSongText] = useState(stranger_tune(1));
     const [volume, setVolume] = useState(1);
     const [cpm, setCpm] = useState(140);
-    let [radioBtn, setRadioBtn] = useState('_')
-    const [state, setState] = useState("stop");
+    const [radioButtons, setRadioButtons] = useState({
+        bassline: '_',
+        main_arp: '_',
+        drums1: '_',
+        drums2: '_',
+    });
+    
 
     const handlePlay = () => {
-        //let outputText = PreprocessText({ inputText: songText, volume: volume });
-        //globalEditor.setCode(outputText);
         globalEditor.evaluate();
     }
 
@@ -43,24 +47,29 @@ export default function StrudelDemo() {
         globalEditor.stop();
     }
 
-    const handleRadioBtn = () => {
-        if (radioBtn === '_') {
-            setRadioBtn('')
-        } else {
-            setRadioBtn('_')
-        }
-    }
+    const handleRadioBtns = (instrument) => {
+        setRadioButtons((prev) => {
+            const newBtns = { ...prev };
+
+            if (prev[instrument] === '_') {
+                newBtns[instrument] = '';
+            } else {
+                newBtns[instrument] = '_';
+            }
+            return newBtns;
+        });
+    };
 
     useEffect(() => {
         if (globalEditor) {
-            const updatedTune = stranger_tune(volume, cpm, radioBtn);
+            const updatedTune = stranger_tune(volume, cpm, radioButtons);
             globalEditor.setCode(updatedTune);
 
             if (state === "play") {
                 handlePlay();
             }
         }
-    }, [volume, cpm, radioBtn])
+    }, [volume, cpm, radioButtons])
 
     useEffect(() => {
 
@@ -94,10 +103,6 @@ export default function StrudelDemo() {
                     await Promise.all([loadModules, registerSynthSounds(), registerSoundfonts()]);
                 },
             });
-            
-        document.getElementById('proc').value = stranger_tune
-        //SetupButtons()
-        //Proc()
     }
 
     globalEditor.setCode(songText);
@@ -168,12 +173,12 @@ return (
                                     <div className="row">
                                         <div className="col-10">
                                             <div className="row">
-                                                <RadioButton btnId="1" onClick={() => handleRadioBtn()} backgroundColor='#ff5757' />
-                                                <RadioButton btnId="2" onClick={() => handleRadioBtn()} backgroundColor='#ffbd59' />
-                                                <RadioButton btnId="3" onClick={() => handleRadioBtn()} backgroundColor='#ffde59' />
+                                                <RadioButton btnId='bassline' onClick={() => handleRadioBtns('bassline')} backgroundColor='#ff5757' />
+                                                <RadioButton btnId='main_arp' onClick={() => handleRadioBtns('main_arp')} backgroundColor='#ffbd59' />
+                                                <RadioButton btnId='drums1' onClick={() => handleRadioBtns('drums1')} backgroundColor='#ffde59' />
                                             </div>
                                             <div className="row">
-                                                <RadioButton backgroundColor="#ff66c4" />
+                                                <RadioButton btnId='drums2' onClick={() => handleRadioBtns('drums2')} backgroundColor="#ff66c4" />
                                                 <RadioButton backgroundColor='#7ed957' />
                                                 <RadioButton backgroundColor='#e2a9f1' />
                                             </div>

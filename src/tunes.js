@@ -1,4 +1,5 @@
-export const stranger_tune = (volume=1, cpm=140, radioBtn="_") => `setcps(${cpm}/60/4)
+export const stranger_tune = (volume = 1, cpm = 140, radioButtons = {}) =>
+`setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
 samples('https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json')
@@ -39,7 +40,7 @@ const arpeggiator2 = [
 const pattern = 0
 const bass = 0
 
-bassline:
+${radioButtons.bassline}bassline:
 note(pick(basslines, bass))
 .sound("supersaw")
 .postgain(2)
@@ -50,7 +51,7 @@ note(pick(basslines, bass))
 .gain(1 * ${volume})
 
 
-${radioBtn}main_arp: 
+${radioButtons.main_arp}main_arp: 
 note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .sound("supersaw")
 .lpf(300)
@@ -60,7 +61,7 @@ note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .postgain(pick(gain_patterns, pattern))
 .gain(1 * ${volume})
 
-drums:
+${radioButtons.drums1}drums:
 stack(
   s("tech:5")
   .postgain(6)
@@ -79,7 +80,7 @@ stack(
   .gain(1 * ${volume}),
 )
 
-drums2: 
+${radioButtons.drums2}drums2: 
 stack(
   s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2 * ${volume}),
   s("hh").struct("x*16").bank("RolandTR808")
