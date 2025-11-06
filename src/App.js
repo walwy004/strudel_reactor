@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
 import { drawPianoroll } from '@strudel/draw';
@@ -14,6 +14,7 @@ import ProcButton from './components/ProcButton';
 import ToggleSwitch from './components/ToggleSwitch';
 import Slider from './components/Slider';
 import CPM from './components/CPM';
+import PreprocessingTextarea from './components/PreprocessingTextarea';
 
 let globalEditor = null;
 
@@ -71,6 +72,8 @@ export default function StrudelDemo() {
     const hasRun = useRef(false);
 
     const handlePlay = () => {
+        //let outputText = PreprocessText({ inputText: songText, volume: volume });
+        //globalEditor.setCode(outputText);
         globalEditor.evaluate();
     }
 
@@ -78,7 +81,22 @@ export default function StrudelDemo() {
         globalEditor.stop();
     }
 
-useEffect(() => {
+    const [songText, setSongText] = useState(stranger_tune(1));
+    const [volume, setVolume] = useState(1);
+    const [state, setState] = useState("stop");
+
+    useEffect(() => {
+        if (globalEditor) {
+            const updatedTune = stranger_tune(volume);
+            globalEditor.setCode(updatedTune);
+
+            if (state === "play") {
+                handlePlay();
+            }
+        }
+    }, [volume])
+
+    useEffect(() => {
 
     if (!hasRun.current) {
         document.addEventListener("d3Data", handleD3Data);
@@ -116,7 +134,8 @@ useEffect(() => {
         //Proc()
     }
 
-}, []);
+    globalEditor.setCode(songText);
+}, [songText]);
 
 
 return (
@@ -129,8 +148,7 @@ return (
 
                     <div className="col-md-6" >
                         <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Text to preprocess:</label>
-                            <textarea className="form-control" rows="15" id="proc" ></textarea>
+                            <PreprocessingTextarea defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
                         </div>
 
                         <div className="row-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
@@ -156,7 +174,7 @@ return (
                                     {/*Sliders*/}
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-4">
-                                            <Slider sliderId="volume" name="Volume" />
+                                            <Slider onVolumeChange={(e) => setVolume(e.target.value)} sliderId="volume" name="Volume" />
                                         </div>
                                         <div className="col-4">
                                             <Slider sliderId="effect" name="Effect" />
@@ -169,8 +187,8 @@ return (
                                         <div className="d-flex flex-wrap justify-content-center gap-2">
                                             <ProcButton btnId="save" name="save" backgroundColor="grey" />
                                             <ProcButton btnId="load" name="load" backgroundColor="grey" />
-                                            <ProcButton onClick={handlePlay} btnId="play" name="play" backgroundColor="#7ed957" />
-                                            <ProcButton onClick={handleStop} btnId="stop" name="stop" backgroundColor="red" />
+                                            <ProcButton onClick={() => { setState("play"); handlePlay() }} btnId="play" name="play" backgroundColor="#7ed957" />
+                                            <ProcButton onClick={() => { setState("stop"); handleStop() }} btnId="stop" name="stop" backgroundColor="red" />
                                         </div>
                                     </div>
                                     

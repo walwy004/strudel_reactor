@@ -1,4 +1,4 @@
-function Slider({ sliderId, name }) {
+function Slider({ sliderId, name, onVolumeChange }) {
 	return (
 		<div style={{
 			display: 'flex',
@@ -6,7 +6,7 @@ function Slider({ sliderId, name }) {
 			alignItems: 'center',
 			marginTop: '100px'
 		}}>
-			<input type="range" className="form-range" id={sliderId}
+			<input min="0" max="2" step="0.1" onMouseUp={onVolumeChange} type="range" className="form-range" id={sliderId}
 				style={{
 					transform: 'rotate(-90deg)',
 					transformOrigin: 'center',

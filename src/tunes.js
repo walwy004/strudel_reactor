@@ -1,4 +1,4 @@
-export const stranger_tune = `setcps(140/60/4)
+export const stranger_tune = (volume=1) => `setcps(140/60/4)
 
 samples('github:algorave-dave/samples')
 samples('https://raw.githubusercontent.com/tidalcycles/Dirt-Samples/master/strudel.json')
@@ -47,6 +47,7 @@ note(pick(basslines, bass))
 .lpf(700)
 .room(0.4)
 .postgain(pick(gain_patterns, pattern))
+.gain(1 * ${volume})
 
 
 main_arp: 
@@ -57,7 +58,7 @@ note(pick(arpeggiator1, "<0 1 2 3>/2"))
 .room(0.6)
 .lpenv(3.3)
 .postgain(pick(gain_patterns, pattern))
-
+.gain(1 * ${volume})
 
 drums:
 stack(
@@ -70,24 +71,25 @@ stack(
   s("sh").struct("[x!3 ~!2 x!10 ~]")
   .postgain(0.5).lpf(7000)
   .bank("RolandTR808")
-  .speed(0.8).jux(rev).room(sine.range(0.1,0.4)).gain(0.6),
+  .speed(0.8).jux(rev).room(sine.range(0.1,0.4)).gain(0.6 * ${volume}),
 
   s("{~ ~ rim ~ cp ~ rim cp ~!2 rim ~ cp ~ < rim ~ >!2}%8 *2")
   .bank("[KorgDDM110, OberheimDmx]").speed(1.2)
-  .postgain(.25),
+  .postgain(.25)
+  .gain(1 * ${volume}),
 )
 
 drums2: 
 stack(
-  s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2),
+  s("[~ hh]*4").bank("RolandTR808").room(0.3).speed(0.75).gain(1.2 * ${volume}),
   s("hh").struct("x*16").bank("RolandTR808")
-  .gain(0.6)
+  .gain(0.6 * ${volume})
   .jux(rev)
   .room(sine.range(0.1,0.4))
   .postgain(0.5),
   
   s("[psr:[2|5|6|7|8|9|12|24|25]*16]?0.1")
-  .gain(0.1)
+  .gain(0.1 * ${volume})
   .postgain(pick(gain_patterns, pattern))
   .hpf(1000)
   .speed(0.5)
