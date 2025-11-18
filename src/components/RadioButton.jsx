@@ -1,13 +1,16 @@
-function RadioButton({ btnId, onClick, backgroundColor }) {
+function RadioButton({ name, onClick, backgroundColor }) {
     return (
-        <button id={btnId} onClick={onClick}
+        <button onClick={onClick}
             style={{
-            width: '120px',
-            height: '120px',
-            backgroundColor: backgroundColor,
-            borderRadius: '5px',
-            margin: '5px'
-        }}></button>
+                width: '120px',
+                height: '120px',
+                backgroundColor: backgroundColor,
+                borderRadius: '5px',
+                margin: '5px',
+                fontSize: '12px'
+            }}>
+            {name}
+        </button>
     );
 }
 

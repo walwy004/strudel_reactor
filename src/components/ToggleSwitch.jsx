@@ -1,11 +1,18 @@
-function ToggleSwitch({ value, onToggle }) {
+function ToggleSwitch({ name, value, onToggle }) {
 	return (
-		<button
-			className={`toggle-btn ${value ? "toggled" : ""}`}
-			onClick={() => onToggle(!value)}
-		>
-			<div className="thumb"></div>
-		</button>
+		<div style={{
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center'
+		}}>
+			<button
+				className={`toggle-btn ${value ? "toggled" : ""}`}
+				onClick={() => onToggle(!value)}>
+
+				<div className="thumb"></div>
+			</button>
+			<label className="form-label" style={{ fontSize: "12px", margin: 0 }}>{name}</label>
+		</div>
 	);
 }
 

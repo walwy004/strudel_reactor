@@ -9,13 +9,12 @@ import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from '../tunes';
 import console_monkey_patch, { getD3Data } from '../console-monkey-patch';
 
+import PreprocessingTextarea from './PreprocessingTextarea';
 import RadioButton from './RadioButton';
 import ProcButton from './ProcButton';
 import ToggleSwitch from './ToggleSwitch';
 import Slider from './Slider';
 import CPM from './CPM';
-import PreprocessingTextarea from './PreprocessingTextarea';
-
 
 let globalEditor = null;
 
@@ -196,21 +195,21 @@ export default function StrudelDemo() {
                             </div>
                         </div>
 
-                        <div className="col-md-6 d-flex jusitify-content-center align-items-center">
+                        <div className="col-md-6 d-flex justify-content-center align-items-center">
                             <div className="container">
 
-                                {/*Grid for pads and toggles*/}
+                                {/* Grid for pads and toggles */}
                                 <div className="row">
 
-                                    {/*Left Controls*/}
+                                    {/* Left Controls (Sliders, CPM, ProcButtons */}
                                     <div className="col-md-4">
 
-                                        {/*CPM*/}
+                                        {/* CPM */}
                                         <div className="row d-flex justify-content-center">
                                             <CPM onCPMChange={(e) => setCpm(e.target.value)} />
                                         </div>
 
-                                        {/*Sliders*/}
+                                        {/* Sliders */}
                                         <div className="row d-flex justify-content-center">
                                             <div className="col-4">
                                                 <Slider onSlider={(e) => setVolume(e.target.value)} sliderId="volume" name="Volume" />
@@ -221,7 +220,7 @@ export default function StrudelDemo() {
                                             <div className="col-8"></div>
                                         </div>
 
-                                        {/*Proc buttons*/}
+                                        {/* Proc buttons */}
                                         <div className="row">
                                             <div className="d-flex flex-wrap justify-content-center gap-2">
                                                 <ProcButton onClick={handleSaveSettings} btnId="save" name="save" backgroundColor="grey" />
@@ -234,34 +233,34 @@ export default function StrudelDemo() {
 
                                     </div>
 
-                                    {/*Right Controls*/}
+                                    {/* Right Controls (Radio Buttons, Toggle Switches) */}
                                     <div className="col-md-8">
 
-                                        {/*Radio buttons*/}
+                                        {/* Radio buttons */}
                                         <div className="row">
                                             <div className="col-10">
                                                 <div className="row">
-                                                    <RadioButton btnId='bassline' onClick={() => handleRadioInstruments('bassline')} backgroundColor='#ff5757' />
-                                                    <RadioButton btnId='main_arp' onClick={() => handleRadioInstruments('main_arp')} backgroundColor='#ffbd59' />
-                                                    <RadioButton btnId='drums1' onClick={() => handleRadioInstruments('drums1')} backgroundColor='#ffde59' />
+                                                    <RadioButton name='bassline' onClick={() => handleRadioInstruments('bassline')} backgroundColor='#ff5757' />
+                                                    <RadioButton name='main_arp' onClick={() => handleRadioInstruments('main_arp')} backgroundColor='#ffbd59' />
+                                                    <RadioButton name='drums1' onClick={() => handleRadioInstruments('drums1')} backgroundColor='#ffde59' />
                                                 </div>
                                                 <div className="row">
-                                                    <RadioButton btnId='drums2' onClick={() => handleRadioInstruments('drums2')} backgroundColor="#ff66c4" />
-                                                    <RadioButton btnId='' backgroundColor='#7ed957' />
-                                                    <RadioButton btnId='' backgroundColor='#e2a9f1' />
+                                                    <RadioButton name='drums2' onClick={() => handleRadioInstruments('drums2')} backgroundColor="#ff66c4" />
+                                                    <RadioButton name='' backgroundColor='#7ed957' />
+                                                    <RadioButton name='' backgroundColor='#e2a9f1' />
                                                 </div>
                                                 <div className="row">
-                                                    <RadioButton btnId='arp' onClick={() => handleRadioArp()} backgroundColor='#5ce1e6' />
-                                                    <RadioButton btnId='pattern' onClick={() => handleRadioPattern()} backgroundColor='#8c52ff' />
-                                                    <RadioButton btnId='bass' onClick={() => handleRadioBass()} backgroundColor='#c1ff72' />
+                                                    <RadioButton name='arp' onClick={() => handleRadioArp()} backgroundColor='#5ce1e6' />
+                                                    <RadioButton name='pattern' onClick={() => handleRadioPattern()} backgroundColor='#8c52ff' />
+                                                    <RadioButton name='bass' onClick={() => handleRadioBass()} backgroundColor='#c1ff72' />
                                                 </div>
                                             </div>
 
-                                            {/*Toggle Switches*/}
+                                            {/* Toggle Switches */}
                                             <div className="col-2 d-flex flex-column align-items-center justify-content-around">
-                                                <ToggleSwitch value={fxReverb} onToggle={setFxReverb} />
-                                                <ToggleSwitch value={fxLowpass} onToggle={setFxLowpass} />
-                                                <ToggleSwitch value={fxOverdrive} onToggle={setFxOverdrive} />
+                                                <ToggleSwitch name="Reverb" value={fxReverb} onToggle={setFxReverb} />
+                                                <ToggleSwitch name="Lowpass" value={fxLowpass} onToggle={setFxLowpass} />
+                                                <ToggleSwitch name="Overdrive" value={fxOverdrive} onToggle={setFxOverdrive} />
                                             </div>
                                         </div>
 
