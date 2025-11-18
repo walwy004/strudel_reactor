@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\slider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\procbutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\procbutton.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\b1lby\\documents\\local unisa\\web tech\\react assignment\\strudel_reactor\\src\\components\\cpm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\cpm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.js",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\App.js",
+              "RelativeDocumentMoniker": "src\\App.js",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\App.js",
+              "RelativeToolTip": "src\\App.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-23T23:43:19.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CPM.jsx",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\CPM.jsx",
+              "RelativeDocumentMoniker": "src\\components\\CPM.jsx",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\CPM.jsx",
+              "RelativeToolTip": "src\\components\\CPM.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T05:51:50.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Slider.jsx",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Slider.jsx",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\Slider.jsx",
+              "RelativeToolTip": "src\\components\\Slider.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T04:00:27.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProcButton.jsx",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\ProcButton.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ProcButton.jsx",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\components\\ProcButton.jsx",
+              "RelativeToolTip": "src\\components\\ProcButton.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAA+wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-06T03:47:17.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tunes.js",
+              "DocumentMoniker": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeDocumentMoniker": "src\\tunes.js",
+              "ToolTip": "C:\\Users\\b1lby\\Documents\\Local UniSA\\Web Tech\\React Assignment\\strudel_reactor\\src\\tunes.js",
+              "RelativeToolTip": "src\\tunes.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-06T03:06:01.969Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
