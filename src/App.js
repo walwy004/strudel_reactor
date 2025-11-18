@@ -41,6 +41,10 @@ export default function StrudelDemo() {
     const [radioPattern, setRadioPattern] = useState(0);
     const [radioBass, setRadioBass] = useState(0);
 
+    const [fxReverb, setFxReverb] = useState(false);
+    const [fxLowpass, setFxLowpass] = useState(false);
+    const [fxOverdrive, setFxOverdrive] = useState(false);
+
     const handlePlay = () => {
         globalEditor.evaluate();
     }
@@ -77,7 +81,10 @@ export default function StrudelDemo() {
             radioInstruments,
             radioArp,
             radioPattern,
-            radioBass
+            radioBass,
+            fxReverb,
+            fxLowpass,
+            fxOverdrive
         };
 
         localStorage.setItem("strudelSettings", JSON.stringify(json));
@@ -101,20 +108,34 @@ export default function StrudelDemo() {
         setRadioArp(json.radioArp);
         setRadioPattern(json.radioPattern);
         setRadioBass(json.radioBass);
+        setFxReverb(json.fxReverb);
+        setFxLowpass(json.fxLowpass);
+        setFxOverdrive(json.fxOverdrive);
 
         alert("Settings loaded!");
     }
 
     useEffect(() => {
         if (globalEditor) {
-            const updatedTune = stranger_tune(volume, cpm, radioInstruments, radioArp, radioPattern, radioBass);
+            const updatedTune = stranger_tune(
+                volume,
+                cpm,
+                radioInstruments,
+                radioArp,
+                radioPattern,
+                radioBass,
+                fxReverb,
+                fxLowpass,
+                fxOverdrive
+            );
             globalEditor.setCode(updatedTune);
 
             if (state === "play") {
                 handlePlay();
             }
         }
-    }, [volume, cpm, radioInstruments, radioArp, radioPattern, radioBass])
+    }, [volume, cpm, radioInstruments, radioArp, radioPattern,
+        radioBass, fxReverb, fxLowpass, fxOverdrive])
 
     useEffect(() => {
 
@@ -236,9 +257,9 @@ return (
 
                                         {/*Toggle Switches*/}
                                         <div className="col-2 d-flex flex-column align-items-center justify-content-around">
-                                            <ToggleSwitch />
-                                            <ToggleSwitch />
-                                            <ToggleSwitch />
+                                            <ToggleSwitch value={fxReverb} onToggle={setFxReverb} />
+                                            <ToggleSwitch value={fxLowpass} onToggle={setFxLowpass} />
+                                            <ToggleSwitch value={fxOverdrive} onToggle={setFxOverdrive} />
                                         </div>
                                     </div>
 

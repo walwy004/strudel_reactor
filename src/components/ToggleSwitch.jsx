@@ -1,12 +1,8 @@
-import { useState } from "react";
-
-function ToggleSwitch() {
-	const [toggled, setToggle] = useState(false)
-
+function ToggleSwitch({ value, onToggle }) {
 	return (
 		<button
-			className={`toggle-btn ${toggled ? "toggled" : ""}`}
-			onClick={() => setToggle(!toggled)}
+			className={`toggle-btn ${value ? "toggled" : ""}`}
+			onClick={() => onToggle(!value)}
 		>
 			<div className="thumb"></div>
 		</button>

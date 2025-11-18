@@ -1,4 +1,14 @@
-export const stranger_tune = (volume=1, cpm =140, radioButtons={}, radioArp='1', radioPattern=0, radioBass=0) =>
+export const stranger_tune = (
+    volume = 1,
+    cpm = 140,
+    radioButtons = {},
+    radioArp = '1',
+    radioPattern = 0,
+    radioBass = 0,
+    fxReverb = false,
+    fxLowpass = false,
+    fxOverdrive = false
+) =>
 `setcps(${cpm}/60/4)
 
 samples('github:algorave-dave/samples')
@@ -96,6 +106,13 @@ stack(
   .speed(0.5)
   .rarely(jux(rev)),
 )
+
+all(x => x
+    ${fxReverb ? `.room(1.2)` : `.room(0)`}
+    ${fxLowpass ? `.lpf(600)` : ``}
+    ${fxOverdrive ? `.postgain(3)` : ``}
+)
+
 //Remixed and reproduced from Algorave Dave's code found here: https://www.youtube.com/watch?v=ZCcpWzhekEY
 // all(x => x.gain(mouseX.range(0,1)))
 // all(x => x.log())
