@@ -32,10 +32,10 @@ export default function StrudelDemo() {
     const [volume, setVolume] = useState(1);
     const [cpm, setCpm] = useState(140);
     const [radioInstruments, setRadioInstruments] = useState({
-        bassline: '_',
-        main_arp: '_',
-        drums1: '_',
-        drums2: '_',
+        bassline: '',
+        main_arp: '',
+        drums1: '',
+        drums2: '',
     });
     const [radioArp, setRadioArp] = useState('1')
     const [radioPattern, setRadioPattern] = useState(0);
@@ -67,6 +67,21 @@ export default function StrudelDemo() {
 
     const handleRadioBass = () => {
         radioBass === 0 ? setRadioBass(1) : setRadioBass(0)
+    }
+
+    const handleSaveSettings = () => {
+        const json = {
+            songText,
+            volume,
+            cpm,
+            radioInstruments,
+            radioArp,
+            radioPattern,
+            radioBass
+        };
+
+        localStorage.setItem("strudelSettings", JSON.stringify(json));
+        alert("Settings saved!")
     }
 
     useEffect(() => {
@@ -165,7 +180,7 @@ return (
                                     {/*Proc buttons*/}
                                     <div className="row">
                                         <div className="d-flex flex-wrap justify-content-center gap-2">
-                                            <ProcButton btnId="save" name="save" backgroundColor="grey" />
+                                            <ProcButton onClick={handleSaveSettings} btnId="save" name="save" backgroundColor="grey" />
                                             <ProcButton btnId="load" name="load" backgroundColor="grey" />
                                             <ProcButton onClick={() => { setState("play"); handlePlay() }} btnId="play" name="play" backgroundColor="#7ed957" />
                                             <ProcButton onClick={() => { setState("stop"); handleStop() }} btnId="stop" name="stop" backgroundColor="red" />
