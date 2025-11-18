@@ -6,7 +6,7 @@ export const stranger_tune = (
     radioArp = '1',
     radioPattern = 0,
     radioBass = 0,
-    fxReverb = false,
+    fxHighpass = false,
     fxLowpass = false,
     fxOverdrive = false
 ) =>
@@ -109,12 +109,11 @@ stack(
 )
 
 all(x => x
-    ${fxReverb ? `.room(1.2)` : `.room(0)`}
-    ${fxLowpass ? `.lpf(600)` : ``}
-    ${fxOverdrive ? `.postgain(3)` : ``}
+    .room(${reverb})
+    ${fxHighpass ? ".hpf(600)" : ""}
+    ${fxLowpass ? ".lpf(600)" : ""}
+    ${fxOverdrive ? ".postgain(3)" : ""}
 )
-
-all(x => x.room(${reverb}))
 
 //Remixed and reproduced from Algorave Dave's code found here: https://www.youtube.com/watch?v=ZCcpWzhekEY
 // all(x => x.gain(mouseX.range(0,1)))

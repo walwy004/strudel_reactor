@@ -40,7 +40,7 @@ export default function StrudelDemo() {
     const [radioArp, setRadioArp] = useState('1')
     const [radioPattern, setRadioPattern] = useState(0);
     const [radioBass, setRadioBass] = useState(0);
-    const [fxReverb, setFxReverb] = useState(false);
+    const [fxHighpass, setFxHighpass] = useState(false);
     const [fxLowpass, setFxLowpass] = useState(false);
     const [fxOverdrive, setFxOverdrive] = useState(false);
 
@@ -64,8 +64,14 @@ export default function StrudelDemo() {
         radioArp === '1' ? setRadioArp('2') : setRadioArp('1')
     }
 
-    const handleRadioPattern = () => {
-        radioPattern === 0 ? setRadioPattern(1) : setRadioPattern(0)
+    const handleRadioPattern = (patternNumber) => {
+        if (radioPattern === patternNumber) {
+            // pressing the same button again resets to 0
+            setRadioPattern(0);
+        } else {
+            // pressing a different button selects that pattern
+            setRadioPattern(patternNumber)
+        }
     }
 
     const handleRadioBass = () => {
@@ -82,7 +88,7 @@ export default function StrudelDemo() {
             radioArp,
             radioPattern,
             radioBass,
-            fxReverb,
+            fxHighpass,
             fxLowpass,
             fxOverdrive
         };
@@ -109,7 +115,7 @@ export default function StrudelDemo() {
         setRadioArp(json.radioArp);
         setRadioPattern(json.radioPattern);
         setRadioBass(json.radioBass);
-        setFxReverb(json.fxReverb);
+        setFxHighpass(json.fxHighpass);
         setFxLowpass(json.fxLowpass);
         setFxOverdrive(json.fxOverdrive);
 
@@ -126,7 +132,7 @@ export default function StrudelDemo() {
                 radioArp,
                 radioPattern,
                 radioBass,
-                fxReverb,
+                fxHighpass,
                 fxLowpass,
                 fxOverdrive
             );
@@ -137,7 +143,7 @@ export default function StrudelDemo() {
             }
         }
     }, [volume, reverb, cpm, radioInstruments, radioArp, radioPattern,
-        radioBass, fxReverb, fxLowpass, fxOverdrive])
+        radioBass, fxHighpass, fxLowpass, fxOverdrive])
 
     useEffect(() => {
 
@@ -246,19 +252,19 @@ export default function StrudelDemo() {
                                                 </div>
                                                 <div className="row">
                                                     <RadioButton name='drums2' onClick={() => handleRadioInstruments('drums2')} backgroundColor="#ff66c4" />
-                                                    <RadioButton name='' backgroundColor='#7ed957' />
-                                                    <RadioButton name='' backgroundColor='#e2a9f1' />
+                                                    <RadioButton name='arpeggiator' onClick={() => handleRadioArp()} backgroundColor='#7ed957' />
+                                                    <RadioButton name='bass' onClick={() => handleRadioBass()} backgroundColor='#e2a9f1' />
                                                 </div>
                                                 <div className="row">
-                                                    <RadioButton name='arp' onClick={() => handleRadioArp()} backgroundColor='#5ce1e6' />
-                                                    <RadioButton name='pattern' onClick={() => handleRadioPattern()} backgroundColor='#8c52ff' />
-                                                    <RadioButton name='bass' onClick={() => handleRadioBass()} backgroundColor='#c1ff72' />
+                                                    <RadioButton name='pattern0' onClick={() => handleRadioPattern(0)} backgroundColor='#5ce1e6' />
+                                                    <RadioButton name='pattern1' onClick={() => handleRadioPattern(1)} backgroundColor='#8c52ff' />
+                                                    <RadioButton name='pattern2' onClick={() => handleRadioPattern(2)} backgroundColor='#c1ff72' />
                                                 </div>
                                             </div>
 
                                             {/* Toggle Switches */}
                                             <div className="col-2 d-flex flex-column align-items-center justify-content-around">
-                                                <ToggleSwitch name="Reverb" value={fxReverb} onToggle={setFxReverb} />
+                                                <ToggleSwitch name="Highpass" value={fxHighpass} onToggle={setFxHighpass} />
                                                 <ToggleSwitch name="Lowpass" value={fxLowpass} onToggle={setFxLowpass} />
                                                 <ToggleSwitch name="Overdrive" value={fxOverdrive} onToggle={setFxOverdrive} />
                                             </div>
