@@ -84,6 +84,27 @@ export default function StrudelDemo() {
         alert("Settings saved!")
     }
 
+    const handleLoadSettings = () => {
+        const saved = localStorage.getItem("strudelSettings");
+
+        // Check if a saved json exists
+        if (!saved) {
+            alert("No saved settings found!")
+            return;
+        }
+
+        const json = JSON.parse(saved);
+        setSongText(json.songText);
+        setVolume(json.volume);
+        setCpm(json.cpm);
+        setRadioInstruments(json.radioInstruments);
+        setRadioArp(json.radioArp);
+        setRadioPattern(json.radioPattern);
+        setRadioBass(json.radioBass);
+
+        alert("Settings loaded!");
+    }
+
     useEffect(() => {
         if (globalEditor) {
             const updatedTune = stranger_tune(volume, cpm, radioInstruments, radioArp, radioPattern, radioBass);
@@ -181,7 +202,7 @@ return (
                                     <div className="row">
                                         <div className="d-flex flex-wrap justify-content-center gap-2">
                                             <ProcButton onClick={handleSaveSettings} btnId="save" name="save" backgroundColor="grey" />
-                                            <ProcButton btnId="load" name="load" backgroundColor="grey" />
+                                            <ProcButton onClick={handleLoadSettings} btnId="load" name="load" backgroundColor="grey" />
                                             <ProcButton onClick={() => { setState("play"); handlePlay() }} btnId="play" name="play" backgroundColor="#7ed957" />
                                             <ProcButton onClick={() => { setState("stop"); handleStop() }} btnId="stop" name="stop" backgroundColor="red" />
                                         </div>
