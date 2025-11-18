@@ -1,5 +1,6 @@
 export const stranger_tune = (
     volume = 1,
+    reverb = 0,
     cpm = 140,
     radioButtons = {},
     radioArp = '1',
@@ -112,6 +113,8 @@ all(x => x
     ${fxLowpass ? `.lpf(600)` : ``}
     ${fxOverdrive ? `.postgain(3)` : ``}
 )
+
+all(x => x.room(${reverb}))
 
 //Remixed and reproduced from Algorave Dave's code found here: https://www.youtube.com/watch?v=ZCcpWzhekEY
 // all(x => x.gain(mouseX.range(0,1)))

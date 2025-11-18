@@ -30,6 +30,7 @@ export default function StrudelDemo() {
     const [state, setState] = useState("stop");
     const [songText, setSongText] = useState(stranger_tune(1));
     const [volume, setVolume] = useState(1);
+    const [reverb, setReverb] = useState(0);
     const [cpm, setCpm] = useState(140);
     const [radioInstruments, setRadioInstruments] = useState({
         bassline: '',
@@ -40,7 +41,6 @@ export default function StrudelDemo() {
     const [radioArp, setRadioArp] = useState('1')
     const [radioPattern, setRadioPattern] = useState(0);
     const [radioBass, setRadioBass] = useState(0);
-
     const [fxReverb, setFxReverb] = useState(false);
     const [fxLowpass, setFxLowpass] = useState(false);
     const [fxOverdrive, setFxOverdrive] = useState(false);
@@ -77,6 +77,7 @@ export default function StrudelDemo() {
         const json = {
             songText,
             volume,
+            reverb,
             cpm,
             radioInstruments,
             radioArp,
@@ -103,6 +104,7 @@ export default function StrudelDemo() {
         const json = JSON.parse(saved);
         setSongText(json.songText);
         setVolume(json.volume);
+        setReverb(json.reverb);
         setCpm(json.cpm);
         setRadioInstruments(json.radioInstruments);
         setRadioArp(json.radioArp);
@@ -119,6 +121,7 @@ export default function StrudelDemo() {
         if (globalEditor) {
             const updatedTune = stranger_tune(
                 volume,
+                reverb,
                 cpm,
                 radioInstruments,
                 radioArp,
@@ -134,7 +137,7 @@ export default function StrudelDemo() {
                 handlePlay();
             }
         }
-    }, [volume, cpm, radioInstruments, radioArp, radioPattern,
+    }, [volume, reverb, cpm, radioInstruments, radioArp, radioPattern,
         radioBass, fxReverb, fxLowpass, fxOverdrive])
 
     useEffect(() => {
@@ -211,10 +214,10 @@ return (
                                     {/*Sliders*/}
                                     <div className="row d-flex justify-content-center">
                                         <div className="col-4">
-                                            <Slider onVolumeChange={(e) => setVolume(e.target.value)} sliderId="volume" name="Volume" />
+                                            <Slider onSlider={(e) => setVolume(e.target.value)} sliderId="volume" name="Volume" />
                                         </div>
                                         <div className="col-4">
-                                            <Slider sliderId="effect" name="Effect" />
+                                            <Slider onSlider={(e) => setReverb(e.target.value)} sliderId="reverb" name="Reverb" />
                                         </div>
                                         <div className="col-8"></div>
                                     </div>
